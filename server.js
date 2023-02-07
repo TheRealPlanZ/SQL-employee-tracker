@@ -111,7 +111,7 @@ function addEmployee() {
                 {
                     first_name: answer.firstName,
                     last_name: answer.lastName,
-                    role_id: answer.role,
+                    role_id: answer.roles,
                     manager_id: answer.manager
                 },
                 function (err) {
@@ -154,7 +154,7 @@ function updateEmployeeRole() {
 }
 
 function viewRoles() {
-    connection.query('SELECT * FROM role', function (err, res) {
+    connection.query('SELECT * FROM roles', function (err, res) {
         if (err) throw err;
         console.table(res);
         start();
